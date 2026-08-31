@@ -1,5 +1,15 @@
 <script setup lang="ts">
-import { Menu, Moon, Sun, Terminal, X } from "@lucide/vue";
+import {
+  CircleQuestionMark,
+  FolderOpen,
+  Home,
+  Mail,
+  Menu,
+  Moon,
+  Sun,
+  Terminal,
+  X,
+} from "@lucide/vue";
 import { RouterLink } from "vue-router";
 import { AppRoutes } from "../../constants/app-routes.ts";
 import { useRoute } from "vue-router";
@@ -19,31 +29,35 @@ const routes = ref([
     id: 0,
     text: "Home",
     href: AppRoutes.HOME,
+    icon: Home,
   },
   {
     id: 1,
-    text: "Projects",
+    text: "Projetos",
     href: AppRoutes.PROJECTS,
+    icon: FolderOpen,
   },
   {
     id: 2,
-    text: "About Me",
+    text: "Sobre mim",
     href: AppRoutes.ABOUT_ME,
+    icon: CircleQuestionMark,
   },
   {
     id: 3,
-    text: "Contact",
+    text: "Contato",
     href: AppRoutes.CONTACT,
+    icon: Mail,
   },
 ]);
 
 function activeRoute(active: boolean) {
   const baseStyles =
-    "font-cormorant-garamond text-lg font-medium hover:text-accent-400 px-2";
+    "flex items-center gap-2 font-cormorant-garamond text-lg font-semibold hover:text-accent-400 px-2 hover:bg-accent-400/10 rounded";
   if (active === false) {
     return `${baseStyles} text-stone-100 dark:text-stone-600`;
   }
-  return `${baseStyles} text-accent-400 bg-accent-400/10 rounded`;
+  return `${baseStyles} text-accent-400 bg-accent-400/10`;
 }
 
 function handleOpenMobileMenu() {
@@ -98,16 +112,18 @@ function handleOpenMobileMenu() {
           :class="activeRoute(pathname === route.href)"
           @click="mobileMenu = false"
         >
+          <component :is="route.icon" :size="18" class="text-inherit" />
           {{ route.text }}
         </RouterLink>
 
         <button
           type="button"
           v-on:click="toggleDark()"
-          class="border rounded p-1 ml-2 border-stone-700 dark:border-stone-300 hover:border-accent-400 hover:bg-accent-400/10 w-fit"
+          class="font-cormorant-garamond text-lg font-semibold flex items-center gap-2 rounded px-2 text-stone-100 dark:text-stone-600 hover:border-accent-400 hover:bg-accent-400/10 hover:text-accent-400"
         >
-          <Moon v-if="isDark" :size="18" class="text-stone-600" />
-          <Sun v-else :size="18" class="text-accent-400" />
+          <Moon v-if="isDark" :size="18" class="text-inherit" />
+          <Sun v-else :size="18" class="text-inherit" />
+          {{ isDark ? "Tema escuro" : "Tema claro" }}
         </button>
       </nav>
     </div>
@@ -126,10 +142,10 @@ function handleOpenMobileMenu() {
       <button
         type="button"
         v-on:click="toggleDark()"
-        class="border rounded p-1 border-stone-700 dark:border-stone-300 hover:border-accent-400 hover:bg-accent-400/10"
+        class="font-cormorant-garamond text-lg font-semibold flex items-center gap-2 rounded px-2 py-1 text-stone-100 dark:text-stone-600 hover:border-accent-400 hover:bg-accent-400/10 hover:text-accent-400"
       >
-        <Moon v-if="isDark" :size="18" class="text-stone-600" />
-        <Sun v-else :size="18" class="text-accent-400" />
+        <Moon v-if="isDark" :size="18" class="text-inherit" />
+        <Sun v-else :size="18" class="text-inherit" />
       </button>
     </nav>
   </div>

@@ -8,12 +8,38 @@ import Contact from "../pages/contact.vue";
 import Projects from "../pages/projects.vue";
 import Project from "../pages/project.vue";
 
+const BASE_TITLE = "Gabriel Passos";
+
 const routes = [
-  { path: AppRoutes.HOME, component: Home },
-  { path: AppRoutes.ABOUT_ME, component: AboutMe },
-  { path: AppRoutes.CONTACT, component: Contact },
-  { path: AppRoutes.PROJECTS, component: Projects },
-  { path: `${AppRoutes.PROJECT}/:id`, name: "Project", component: Project },
+  {
+    path: AppRoutes.HOME,
+    name: "home",
+    component: Home,
+    meta: { title: "Home" },
+  },
+  {
+    path: AppRoutes.ABOUT_ME,
+    name: "about",
+    component: AboutMe,
+    meta: { title: "Sobre mim" },
+  },
+  {
+    path: AppRoutes.CONTACT,
+    name: "contact",
+    component: Contact,
+    meta: { title: "Contato" },
+  },
+  {
+    path: AppRoutes.PROJECTS,
+    name: "projects",
+    component: Projects,
+    meta: { title: "Projetos" },
+  },
+  {
+    path: `${AppRoutes.PROJECT}/:id`,
+    name: "project",
+    component: Project,
+  },
 ];
 
 export const router = createRouter({
@@ -25,4 +51,10 @@ export const router = createRouter({
     }
     return { top: 0 };
   },
+});
+
+router.afterEach((to) => {
+  document.title = to.meta.title
+    ? `${BASE_TITLE} · ${to.meta.title}`
+    : BASE_TITLE;
 });

@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent-100: #f4ddbd;
+  --color-accent-200: #e3c191;
+  --color-accent-300: #cca063;
+  --color-accent-400: #b0813b;
+  --color-accent-500: #8f6628;
+  --color-accent-600: #6d4c1f;
+  --color-accent-700: #513819;
+  --color-accent-800: #3a2810;
+  --color-accent-900: #2b1c09;
+
+  --font-cormorant-garamond: "Cormorant Garamond", serif;
+  --font-lora: "Lora", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-stone-900 dark:bg-[#f3f2f2];
+}
+
+button {
+  cursor: pointer;
+}

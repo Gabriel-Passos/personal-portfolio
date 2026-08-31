@@ -32,7 +32,7 @@ async function handleSubmit() {
       },
       body: JSON.stringify({
         access_key: accessKey,
-        subject: `Novo contato via portfólio — ${form.name}`,
+        subject: `Portfólio — ${form.name} entrou em contato`,
         from_name: form.name,
         name: form.name,
         email: form.email,

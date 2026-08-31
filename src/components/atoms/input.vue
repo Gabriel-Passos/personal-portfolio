@@ -9,6 +9,7 @@ interface InputProps extends /* @vue-ignore */ InputHTMLAttributes {
 }
 
 const props = defineProps<InputProps>();
+const model = defineModel<string>();
 </script>
 
 <template>
@@ -22,6 +23,7 @@ const props = defineProps<InputProps>();
     </label>
     <textarea
       v-if="props.textarea"
+      v-model="model"
       :name="`input-${props.label}`"
       :id="`input-${props.label}`"
       class="border rounded px-2.5 py-1.5 text-stone-100 dark:text-stone-800 border-stone-700 dark:border-stone-300 placeholder:text-stone-600 dark:placeholder:text-stone-400"
@@ -30,6 +32,7 @@ const props = defineProps<InputProps>();
     />
     <input
       v-else
+      v-model="model"
       :id="`input-${props.label}`"
       class="border rounded px-2.5 py-1.5 text-stone-100 dark:text-stone-800 border-stone-700 dark:border-stone-300 placeholder:text-stone-600 dark:placeholder:text-stone-400"
       v-bind="$attrs"

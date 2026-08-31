@@ -26,7 +26,7 @@ const scrollToSection = () => {
 
       <div class="grid gap-6 lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
         <ProjectCard
-          v-for="project in personalProjects"
+          v-for="project in personalProjects.slice(0, 3)"
           :key="project.id"
           :project-id="project.id"
           :title="project.title"

@@ -13,31 +13,31 @@ const BASE_TITLE = "Gabriel Passos";
 const routes = [
   {
     path: AppRoutes.HOME,
-    name: "home",
+    name: "Home",
     component: Home,
     meta: { title: "Home" },
   },
   {
     path: AppRoutes.ABOUT_ME,
-    name: "about",
+    name: "AboutMe",
     component: AboutMe,
     meta: { title: "Sobre mim" },
   },
   {
     path: AppRoutes.CONTACT,
-    name: "contact",
+    name: "Contact",
     component: Contact,
     meta: { title: "Contato" },
   },
   {
     path: AppRoutes.PROJECTS,
-    name: "projects",
+    name: "Projects",
     component: Projects,
     meta: { title: "Projetos" },
   },
   {
     path: `${AppRoutes.PROJECT}/:id`,
-    name: "project",
+    name: "Project",
     component: Project,
   },
 ];

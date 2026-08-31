@@ -355,6 +355,11 @@
   resolved "https://registry.yarnpkg.com/@types/web-bluetooth/-/web-bluetooth-0.0.21.tgz#525433c784aed9b457aaa0ee3d92aeb71f346b63"
   integrity sha512-oIQLCGWtcFZy2JW77j9k8nHzAOpqMHLQejDA48XXMWH6tjCQHz5RCFz1bzsmROyL6PUm+LLnUiI4BCn221inxA==
 
+"@vercel/analytics@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@vercel/analytics/-/analytics-2.0.1.tgz#d7d7bd37af7cfbeea95db5f132ae4889f4d26407"
+  integrity sha512-MTQG6V9qQrt1tsDeF+2Uoo5aPjqbVPys1xvnIftXSJYG2SrwXRHnqEvVoYID7BTruDz4lCd2Z7rM1BdkUehk2g==
+
 "@vitejs/plugin-vue@^6.0.8":
   version "6.0.8"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-6.0.8.tgz#1809d090b7c93b8f4ae83d3e7536655cbbb1c793"

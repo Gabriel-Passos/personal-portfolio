@@ -2,10 +2,12 @@
 import { RouterView } from "vue-router";
 import Layout from "./components/organisms/layout.vue";
 import BackToTopButton from "./components/molecules/back-to-top-button.vue";
+import { Analytics } from "@vercel/analytics/vue";
 </script>
 
 <template>
   <Layout>
+    <Analytics />
     <RouterView />
     <BackToTopButton />
   </Layout>

@@ -51,6 +51,13 @@ const routes = ref([
   },
 ]);
 
+function isRouteActive(href: string) {
+  if (href === AppRoutes.HOME) {
+    return pathname.value === href;
+  }
+  return pathname.value.startsWith(href);
+}
+
 function activeRoute(active: boolean) {
   const baseStyles =
     "flex items-center gap-2 font-cormorant-garamond text-lg font-semibold hover:text-accent-400 px-2 hover:bg-accent-400/10 rounded";
@@ -109,7 +116,7 @@ function handleOpenMobileMenu() {
           v-for="route in routes"
           :key="route.id"
           :to="route.href"
-          :class="activeRoute(pathname === route.href)"
+          :class="activeRoute(isRouteActive(route.href))"
           @click="mobileMenu = false"
         >
           <component :is="route.icon" :size="18" class="text-inherit" />
@@ -134,7 +141,7 @@ function handleOpenMobileMenu() {
         v-for="route in routes"
         :key="route.id"
         :to="route.href"
-        :class="activeRoute(pathname === route.href)"
+        :class="activeRoute(isRouteActive(route.href))"
       >
         {{ route.text }}
       </RouterLink>

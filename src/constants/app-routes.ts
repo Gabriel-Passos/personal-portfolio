@@ -3,5 +3,4 @@ export const AppRoutes = {
   ABOUT_ME: "/about-me",
   CONTACT: "/contact",
   PROJECTS: "/projects",
-  PROJECT: "/project",
 } as const;

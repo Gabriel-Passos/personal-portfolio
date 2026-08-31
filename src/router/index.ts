@@ -36,7 +36,7 @@ const routes = [
     meta: { title: "Projetos" },
   },
   {
-    path: `${AppRoutes.PROJECT}/:id`,
+    path: `${AppRoutes.PROJECTS}/:id`,
     name: "Project",
     component: Project,
   },

@@ -5,10 +5,8 @@ import ContactItem from "../components/atoms/contact-item.vue";
 import Input from "../components/atoms/input.vue";
 import TextHighlight from "../components/atoms/text-highlight.vue";
 
-const contactEmail = "dev.ghpasssos@gmail.com";
+const contactEmail = "dev.ghpassos@gmail.com";
 
-// Chave pública do Web3Forms — não é secreta, mas fica em env var
-// pra facilitar troca sem mexer no código.
 const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string;
 
 const form = reactive({
@@ -73,7 +71,7 @@ async function handleSubmit() {
       </p>
 
       <div class="flex flex-col">
-        <ContactItem :label="'E-mail'" :value="'dev.ghpasssos@gmail.com'" />
+        <ContactItem :label="'E-mail'" :value="'dev.ghpassos@gmail.com'" />
         <ContactItem
           :label="'Linkedin'"
           :value="'/in/ghpassos'"
